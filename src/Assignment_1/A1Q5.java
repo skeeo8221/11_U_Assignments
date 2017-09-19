@@ -11,7 +11,7 @@ package Assignment_1;
 public class A1Q5 {
 
     /**
-     * @param args the command line arguments
+     * @param args the command line argument
      */
     public static void main(String[] args) {
         // TODO code application logic here

@@ -33,7 +33,7 @@ public class A1Q2 {
 
         //create robot
         Robot sunsar = new Robot(Sunsartown, 1, 2, Direction.SOUTH);
-
+        //create walls
         new Wall(Sunsartown, 1, 1, Direction.NORTH);
         new Wall(Sunsartown, 1, 2, Direction.NORTH);
         new Wall(Sunsartown, 2, 1, Direction.SOUTH);
