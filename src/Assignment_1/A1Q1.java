@@ -22,61 +22,60 @@ public class A1Q1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-   
-         /**
-     * @param args the command line arguments
-     */
 
-     //create a new city called sunsartown
-     City Sunsartown = new City();
-     
-     //create robot
-     Robot sunsar = new Robot(Sunsartown, 0, 2, Direction. WEST);
-   
-     new Wall(Sunsartown, 1, 1, Direction.NORTH);
-     new Wall(Sunsartown, 1, 2, Direction.NORTH);
-     new Wall(Sunsartown, 2, 1, Direction.SOUTH);
-     new Wall(Sunsartown, 2, 2, Direction.SOUTH);
-     new Wall(Sunsartown, 1, 1, Direction.WEST);
-     new Wall(Sunsartown, 2, 1, Direction.WEST);
-     new Wall(Sunsartown, 1, 2, Direction.EAST);
-     new Wall(Sunsartown, 2, 2, Direction.EAST);
-       
-       
-       
-     //set sunsars color to blue
-     sunsar.setColor(Color.black);
-     
+        /**
+         * @param args the command line arguments
+         */
+        //create a new city called sunsartown
+        City Sunsartown = new City();
 
-     
-     //get sunsar to move
-     sunsar.move();
-     sunsar.move();
-     //get sunsar to turn left
-     sunsar.turnLeft();
-     //get sunsar to move
-     sunsar.move();
-     sunsar.move();
-     sunsar.move();
-     //get sunsar to turn left
-     sunsar.turnLeft();
-     //get sunsar to move
-     sunsar.move();
-     sunsar.move();
-     sunsar.move();
-     //get sunsar to turn left
-     sunsar.turnLeft();
-     //get sunsar to move
-     sunsar.move();
-     sunsar.move();
-     sunsar.move(); 
-     //get sunsar to turn left
-     sunsar.turnLeft();
-     //get sunsar to move
-     sunsar.move();
-     
-     
-     
-     
+        //create robot
+        Robot sunsar = new Robot(Sunsartown, 0, 2, Direction.WEST);
+
+        new Wall(Sunsartown, 1, 1, Direction.NORTH);
+        new Wall(Sunsartown, 1, 2, Direction.NORTH);
+        new Wall(Sunsartown, 2, 1, Direction.SOUTH);
+        new Wall(Sunsartown, 2, 2, Direction.SOUTH);
+        new Wall(Sunsartown, 1, 1, Direction.WEST);
+        new Wall(Sunsartown, 2, 1, Direction.WEST);
+        new Wall(Sunsartown, 1, 2, Direction.EAST);
+        new Wall(Sunsartown, 2, 2, Direction.EAST);
+
+
+
+        //set sunsars color to blue
+        sunsar.setColor(Color.black);
+
+
+
+        //get sunsar to move
+        sunsar.move();
+        sunsar.move();
+        //get sunsar to turn left
+        sunsar.turnLeft();
+        //get sunsar to move
+        sunsar.move();
+        sunsar.move();
+        sunsar.move();
+        //get sunsar to turn left
+        sunsar.turnLeft();
+        //get sunsar to move
+        sunsar.move();
+        sunsar.move();
+        sunsar.move();
+        //get sunsar to turn left
+        sunsar.turnLeft();
+        //get sunsar to move
+        sunsar.move();
+        sunsar.move();
+        sunsar.move();
+        //get sunsar to turn left
+        sunsar.turnLeft();
+        //get sunsar to move
+        sunsar.move();
+
+
+
+
     }
 }
