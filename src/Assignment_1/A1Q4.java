@@ -15,7 +15,7 @@ import java.awt.Color;
  *
  * @author skeeo8221
  */
-public class A1Q3 {
+public class A1Q4 {
 
     /**
      * @param args the command line arguments
