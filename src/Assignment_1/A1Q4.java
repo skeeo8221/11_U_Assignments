@@ -32,79 +32,49 @@ public class A1Q4 {
         City Sunsartown = new City();
 
         //create robot
-        Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.EAST);
-        //create wall
-        new Wall(Sunsartown, 3, 2, Direction.WEST);
-        new Wall(Sunsartown, 3, 2, Direction.NORTH);
-        new Wall(Sunsartown, 2, 3, Direction.WEST);
-        new Wall(Sunsartown, 1, 3, Direction.WEST);
-        new Wall(Sunsartown, 2, 4, Direction.NORTH);
-        new Wall(Sunsartown, 2, 4, Direction.EAST);
-        new Wall(Sunsartown, 1, 3, Direction.NORTH);
-        new Wall(Sunsartown, 3, 4, Direction.EAST);
-        new Wall(Sunsartown, 1, 3, Direction.EAST);
+        Robot sunsar = new Robot(Sunsartown, 0, 0, Direction.SOUTH);
 
+        //create robot
+        Robot owen = new Robot(Sunsartown, 0, 1, Direction.SOUTH);
 
-        //create newspaper
-        Thing t = new Thing(Sunsartown, 3, 1);
+        //create walls
+        new Wall(Sunsartown, 0, 1, Direction.WEST);
+        new Wall(Sunsartown, 1, 1, Direction.WEST);
+        new Wall(Sunsartown, 1, 1, Direction.SOUTH);
 
-
-        //make newspaper black
-        t.setColor(Color.black);
 
         //set sunsars color to black
         sunsar.setColor(Color.black);
 
+        //set sunsars color to black
+        owen.setColor(Color.black);
 
 
         //get sunsar to move
         sunsar.move();
-        //get sunsar to pick up thing
-        sunsar.pickThing();
+        //get owen to move
+        owen.move();
+        //get sunsar to move
+        sunsar.move();
+        //get sunsar to turn left
+        owen.turnLeft();
+        //get owen to move
+        owen.move();
         //get sunsar to turn left
         sunsar.turnLeft();
         //get sunsar to move
         sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        //get sunsar to move
-        sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        //get sunsar to move
-        sunsar.move();
-        sunsar.move();
-
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        //get sunsar to move
-        sunsar.move();
-        //get sunsar to put down thing
-        sunsar.putThing();
-        sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        //get sunsar to move
-        sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        //get sunsar to put down thing
-        //get sunsar to move
-        sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        sunsar.turnLeft();
-        //get sunsar to move
-        sunsar.move();
-        sunsar.move();
-        //get sunsar to turn left
-        sunsar.turnLeft();
+        //get owen to turn left
+        owen.turnLeft();
+        owen.turnLeft();
+        owen.turnLeft();
+        //get owen to move
+        owen.move();
+        //get owen to turn left
+        owen.turnLeft();
+        owen.turnLeft();
+        owen.turnLeft();
+        //get owen to move
+        owen.move();
     }
 }

@@ -28,10 +28,10 @@ public class A1Q3 {
         /**
          * @param args the command line arguments
          */
-        //create a new city called sunsartown
+        //create a new city called Sunsartown
         City Sunsartown = new City();
 
-        //create robot
+        //create robot named sunsar
         Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.EAST);
         //create walls
         new Wall(Sunsartown, 3, 2, Direction.WEST);
