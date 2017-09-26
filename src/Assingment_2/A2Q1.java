@@ -51,15 +51,21 @@ public class A2Q1 {
         
         
         while (true){
-            while (sunsar.countThingsInBackpack()! = 7){
+            while (sunsar.countThingsInBackpack()!= 7){
             
         //get sunsar to  move
         sunsar.move();
         //get sunsar to pick up thing
         sunsar.pickThing();
-       
         }
         
+            //get sunsar to  move
+        sunsar.move();
+        sunsar.move();
+        sunsar.move();
+        sunsar.move();
+        
+        break;
     }
 
         }

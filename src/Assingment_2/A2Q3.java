@@ -14,8 +14,9 @@ import becker.robots.Wall;
  *
  * @author skeeo8221
  */
-public class A2Q2 {
+public class A2Q3 {
 
+ 
     /**
      * @param args the command line arguments
      */
@@ -36,29 +37,8 @@ public class A2Q2 {
         sunsar.setLabel("s");
         //create walls
 
-        new Wall(Sunsartown, 3, 0, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 1, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 2, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 3, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 4, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 5, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 6, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 7, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 8, Direction.SOUTH);
-        new Wall(Sunsartown, 3, 0, Direction.EAST);
-        new Wall(Sunsartown, 3, 1, Direction.EAST);
-        new Wall(Sunsartown, 3, 3, Direction.EAST);
-        new Wall(Sunsartown, 3, 6, Direction.EAST);
-
-        //create thing
-        Thing a = new Thing(Sunsartown, 3, 8);
-
-
         while (!(sunsar.canPickThing())) {
             if (sunsar.frontIsClear()) {
-
-                //get sunsar to  move
-                sunsar.move();
 
 
             } else {
