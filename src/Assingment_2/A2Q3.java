@@ -16,7 +16,6 @@ import becker.robots.Wall;
  */
 public class A2Q3 {
 
- 
     /**
      * @param args the command line arguments
      */
@@ -32,38 +31,34 @@ public class A2Q3 {
         City Sunsartown = new City();
 
         //create robot
-        Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.EAST);
+        Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.NORTH);
 
         sunsar.setLabel("s");
         //create walls
 
-        while (!(sunsar.canPickThing())) {
-            if (sunsar.frontIsClear()) {
 
+        sunsar.getAvenue();
 
-            } else {
-                //get sunsar to jump over herdle
-                sunsar.turnLeft();
-                //get sunsar to  move
-                sunsar.move();
-                //get sunsar to turn right
-                sunsar.turnLeft();
-                sunsar.turnLeft();
-                sunsar.turnLeft();
-                //get sunsar to  move
-                sunsar.move();
-                //get sunsar to turn right
-                sunsar.turnLeft();
-                sunsar.turnLeft();
-                sunsar.turnLeft();
-                //get sunsar to  move
-                sunsar.move();
-                //get sunsar to turn left
-                sunsar.turnLeft();
-            }
+        while (true)
+               if (sunsar.getAvenue() > 0) {
+
+            sunsar.move();
+
+        } else {
+
+                    sunsar.turnLeft();
+                   
+            
+               if (sunsar.getStreet() > 0) {
+                   
+                  
+                   sunsar.move();
+                   
+               }else{
+                   
+                   
+                   
+               }
         }
-
-        sunsar.pickThing();
-        
     }
 }
