@@ -31,34 +31,47 @@ public class A2Q3 {
         City Sunsartown = new City();
 
         //create robot
-        Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.NORTH);
+        Robot sunsar = new Robot(Sunsartown, 0, 0, Direction.EAST);
 
+        new Wall(Sunsartown, 1, 1, Direction.NORTH);
+        new Wall(Sunsartown, 1, 1, Direction.EAST);
+        new Wall(Sunsartown, 1, 1, Direction.SOUTH);
+        new Wall(Sunsartown, 1, 1, Direction.WEST);
+       new Wall(Sunsartown, 4, 1, Direction.NORTH);
+        new Wall(Sunsartown, 4, 1, Direction.EAST);
+        new Wall(Sunsartown, 4, 1, Direction.SOUTH);
+        new Wall(Sunsartown, 4, 1, Direction.WEST);
+        new Wall(Sunsartown, 4, 4, Direction.NORTH);
+        new Wall(Sunsartown, 4, 4, Direction.EAST);
+        new Wall(Sunsartown, 4, 4, Direction.SOUTH);
+        new Wall(Sunsartown, 4, 4, Direction.WEST);
+          new Wall(Sunsartown, 1, 4, Direction.NORTH);
+        new Wall(Sunsartown, 1, 4, Direction.EAST);
+        new Wall(Sunsartown, 1, 4, Direction.SOUTH);
+        new Wall(Sunsartown, 1, 4, Direction.WEST);
+          new Wall(Sunsartown, 2, 3, Direction.EAST);
+        new Wall(Sunsartown, 3, 3, Direction.EAST);
+        new Wall(Sunsartown, 2, 2, Direction.WEST);
+        new Wall(Sunsartown, 3, 2, Direction.WEST);
+        new Wall(Sunsartown, 2, 3, Direction.NORTH);
+        new Wall(Sunsartown, 2, 2, Direction.NORTH);
+        new Wall(Sunsartown, 3, 3, Direction.SOUTH);
+        new Wall(Sunsartown, 3, 2, Direction.SOUTH);
+        
+        
         sunsar.setLabel("s");
         //create walls
 
+        
+        sunsar.move();
+        sunsar.move();
+        
+        sunsar.turnLeft();
+        
 
-        sunsar.getAvenue();
 
-        while (true)
-               if (sunsar.getAvenue() > 0) {
 
-            sunsar.move();
 
-        } else {
-
-                    sunsar.turnLeft();
-                   
-            
-               if (sunsar.getStreet() > 0) {
-                   
-                  
-                   sunsar.move();
-                   
-               }else{
-                   
-                   
-                   
-               }
-        }
     }
+}
 }
