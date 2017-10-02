@@ -33,11 +33,11 @@ public class A2Q1 {
         //create robot
         Robot sunsar = new Robot(Sunsartown, 1, 1, Direction.EAST);
 
+        //set sunsars label to "s"
         sunsar.setLabel("s");
-  
-        
+
+
         //create thing
-        
         Thing b = new Thing(Sunsartown, 1, 2);
         Thing c = new Thing(Sunsartown, 1, 3);
         Thing d = new Thing(Sunsartown, 1, 4);
@@ -48,26 +48,26 @@ public class A2Q1 {
         Thing i = new Thing(Sunsartown, 1, 9);
         Thing j = new Thing(Sunsartown, 1, 10);
         Thing a = new Thing(Sunsartown, 1, 11);
-        
-        
-        while (true){
-            while (sunsar.countThingsInBackpack()!= 7){
-            
-        //get sunsar to  move
-        sunsar.move();
-        //get sunsar to pick up thing
-        sunsar.pickThing();
-        }
-        
+
+        //while sunsar's backpack does not have seven things inside
+        while (true) {
+            while (sunsar.countThingsInBackpack() != 7) {
+
+                //get sunsar to  move
+                sunsar.move();
+                //get sunsar to pick up thing
+                sunsar.pickThing();
+            }
+
             //get sunsar to  move
-        sunsar.move();
-        sunsar.move();
-        sunsar.move();
-        sunsar.move();
-        
-        break;
-    }
+            sunsar.move();
+            sunsar.move();
+            sunsar.move();
+            sunsar.move();
 
+            //breack loop
+            break;
         }
 
+    }
 }

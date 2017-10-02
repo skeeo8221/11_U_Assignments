@@ -33,9 +33,11 @@ public class A2Q2 {
         //create robot
         Robot sunsar = new Robot(Sunsartown, 3, 0, Direction.EAST);
 
+        //set robot label to "s"
         sunsar.setLabel("s");
-        //create walls
 
+
+        //create walls
         new Wall(Sunsartown, 3, 0, Direction.SOUTH);
         new Wall(Sunsartown, 3, 1, Direction.SOUTH);
         new Wall(Sunsartown, 3, 2, Direction.SOUTH);
@@ -54,7 +56,10 @@ public class A2Q2 {
         Thing a = new Thing(Sunsartown, 3, 8);
 
 
+        //while sunsar cannot pick thing
         while (!(sunsar.canPickThing())) {
+
+            //if sunsars front is clear
             if (sunsar.frontIsClear()) {
 
                 //get sunsar to  move
@@ -62,28 +67,36 @@ public class A2Q2 {
 
 
             } else {
+
                 //get sunsar to jump over herdle
                 sunsar.turnLeft();
+
                 //get sunsar to  move
                 sunsar.move();
+
                 //get sunsar to turn right
                 sunsar.turnLeft();
                 sunsar.turnLeft();
                 sunsar.turnLeft();
+
                 //get sunsar to  move
                 sunsar.move();
+
                 //get sunsar to turn right
                 sunsar.turnLeft();
                 sunsar.turnLeft();
                 sunsar.turnLeft();
+
                 //get sunsar to  move
                 sunsar.move();
+
                 //get sunsar to turn left
                 sunsar.turnLeft();
             }
         }
 
+        //get sunsar to pick thing
         sunsar.pickThing();
-        
+
     }
 }
