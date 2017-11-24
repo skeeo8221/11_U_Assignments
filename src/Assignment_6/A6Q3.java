@@ -19,9 +19,10 @@ public class A6Q3 {
         // TODO code application logic here
 
 
+        //new variable to hold the place of an integer when swaping places
+        int placeHolder = 0;
 
-
-        //a new integer to store the two numbers
+        //a new integer array to store the two numbers
         int[] numbers = new int[2];
 
 
@@ -35,21 +36,33 @@ public class A6Q3 {
             //create scanner to use as input
             Scanner input = new Scanner(System.in);
 
-            //i is next line
+            //the array input is the next line
             numbers[i] = input.nextInt();
 
         }
-          
-        //if the two nubers are already in the right order
-        if ( numbers[0] < numbers[1] ){
-                
-        //print the two numbers in ascending order
-        System.out.println( numbers[0] + " then " + numbers[1] + " (in ascending order)");
 
-} else {
-            
-       
-            
-}
-}
+        //if the two nubers are already in the right order
+        if (numbers[0] < numbers[1]) {
+
+            //print the two numbers in ascending order
+            System.out.println(numbers[0] + " then " + numbers[1] + " (in ascending order)");
+
+        } else {
+
+
+
+            //swap the places in the array of the integers using the placeholder variable
+            placeHolder = numbers[0];
+
+            numbers[0] = numbers[1];
+
+            numbers[1] = placeHolder;
+
+
+            //print the two numbers in ascending order
+            System.out.println(numbers[0] + " then " + numbers[1] + " (in ascending order)");
+
+
+        }
+    }
 }
