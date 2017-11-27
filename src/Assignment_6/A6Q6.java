@@ -10,28 +10,46 @@ import java.util.Scanner;
  *
  * @author skeeo8221
  */
-public class A6Q4 {
+public class A6Q6 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+  
+
+
+
+
+
+
 
         //new variable to hold the place of an integer when swaping places
         int placeHolder = 0;
 
-        //a new integer array to store the ten numbers
-        int[] numbers = new int[10];
 
-        //print "enter the value of the ten marks"
-        System.out.println("enter the value of the ten marks");
+
+        //print "how many hieghts will you be entering?"
+        System.out.print("how many marks will you be entering?");
+
+        //create scanner to use as input
+        Scanner input = new Scanner(System.in);
+
+        //new integer numStudents is next line
+        int numMarks = input.nextInt();
+
+
+        //an array to store the student marks
+        int[] numbers = new int[numMarks];
+
+
+        //print "enter the value of the" (the number of marks that they will be entering)"marks"
+        System.out.println("enter the value of the " + numMarks + " marks");
 
         //use a loop to get all the info
         for (int i = 0; i < numbers.length; i++) {
 
-            //create scanner to use as input
-            Scanner input = new Scanner(System.in);
 
             //the array input is the next line
             numbers[i] = input.nextInt();
@@ -61,6 +79,7 @@ public class A6Q4 {
         }
 
 
+        
         //print the title for the outputed numbers
         System.out.println("the values you entered in ascending value are:");
 
@@ -70,7 +89,27 @@ public class A6Q4 {
             //print each number as it is adressed in the for statement
             System.out.println(numbers[x]);
 
+         
         }
 
+        
+        
+        
+         int y = 0;
+        
+          for (int i = 0; i < numbers.length; i++) {
+            
+              y = y + numbers;
+              
+              
+    
+            //print each number as it is adressed in the for statement
+            System.out.println("therefore, the average of the marks you entered is ";
+        
+         
+        }
+        
+        
     }
 }
+
