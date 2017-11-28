@@ -30,7 +30,7 @@ public class A6Q6 {
 
 
 
-        //print "how many hieghts will you be entering?"
+        //print "how many marks will you be entering?"
         System.out.print("how many marks will you be entering?");
 
         //create scanner to use as input
@@ -45,7 +45,7 @@ public class A6Q6 {
 
 
         //print "enter the value of the" (the number of marks that they will be entering)"marks"
-        System.out.println("enter the value of the " + numMarks + " marks");
+        System.out.println("enter the values of the " + numMarks + " marks");
 
         //use a loop to get all the info
         for (int i = 0; i < numbers.length; i++) {
@@ -74,11 +74,12 @@ public class A6Q6 {
 
                     numbers[y + 1] = placeHolder;
 
+                    
+                    
                 }
             }
-        }
-
-
+        
+        }  
         
         //print the title for the outputed numbers
         System.out.println("the values you entered in ascending value are:");
@@ -88,28 +89,24 @@ public class A6Q6 {
 
             //print each number as it is adressed in the for statement
             System.out.println(numbers[x]);
-
-         
-        }
-
-        
-        
-        
-         int y = 0;
+                    
+        }         
+                    
+                    
+        //calculate the average of the numbers               
+         int g = 0;
         
           for (int i = 0; i < numbers.length; i++) {
             
-              y = y + numbers;
+              g = g + numbers[i];
               
-              
-    
-            //print each number as it is adressed in the for statement
-            System.out.println("therefore, the average of the marks you entered is ";
-        
-         
-        }
-        
-        
-    }
-}
-
+              g = g / numbers.length;
+                    
+          }
+                    
+                     //print the title for the outputed numbers
+        System.out.println("therefore the class average is " + g);
+                    
+           
+                }
+            }
