@@ -107,6 +107,14 @@ public class A6Q6 {
                      //print the title for the outputed numbers
         System.out.println("therefore the class average is " + g);
                     
+                     
+                     //print the title for the outputed numbers
+        System.out.println("therefore the highest mark in the class is " + numbers[0]);
+        
+                     
+                     //print the title for the outputed numbers
+        System.out.println("therefore the lowest mark in the class is " + numbers[numbers.length]);
+        
            
                 }
             }
