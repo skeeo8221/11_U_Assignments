@@ -19,9 +19,6 @@ public class A6Q1 {
         // TODO code application logic here
 
 
-
-
-
         //print "how many students will you be entering marks for?"
         System.out.print("how many students will you be entering marks for?");
 

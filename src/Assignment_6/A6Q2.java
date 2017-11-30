@@ -71,10 +71,6 @@ public class A6Q2 {
 
             }
 
-
-
-
-
         }
     }
 }

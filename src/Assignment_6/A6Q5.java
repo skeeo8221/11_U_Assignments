@@ -19,13 +19,6 @@ public class A6Q5 {
         // TODO code application logic here
 
 
-
-
-
-
-
-
-
         //new variable to hold the place of an integer when swaping places
         int placeHolder = 0;
 

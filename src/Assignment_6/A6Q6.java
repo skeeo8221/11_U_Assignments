@@ -19,28 +19,22 @@ public class A6Q6 {
         // TODO code application logic here
   
 
-
-
-
-
-
-
         //new variable to hold the place of an integer when swaping places
         int placeHolder = 0;
 
 
 
-        //print "how many marks will you be entering?"
+        //ask "how many marks will you be entering?"
         System.out.print("how many marks will you be entering?");
 
         //create scanner to use as input
         Scanner input = new Scanner(System.in);
 
-        //new integer numStudents is next line
+        //new integer numMarks is next line
         int numMarks = input.nextInt();
 
 
-        //an array to store the student marks
+        //an array to store the student marks that is the length of the entered number
         int[] numbers = new int[numMarks];
 
 
@@ -100,21 +94,23 @@ public class A6Q6 {
             
               g = g + numbers[i];
               
-              g = g / numbers.length;
-                    
           }
+              double total = g / numbers.length;
                     
-                     //print the title for the outputed numbers
-        System.out.println("therefore the class average is " + g);
+          
+                    
+                     //print the title for the outputed numbers and the average
+        System.out.println("therefore the class average is " + total);
                     
                      
-                     //print the title for the outputed numbers
-        System.out.println("therefore the highest mark in the class is " + numbers[0]);
+                     //print the title for the outputed numbers and the lowest mark
+        System.out.println("therefore the lowest mark in the class is " + numbers[0]);
         
                      
-                     //print the title for the outputed numbers
-        System.out.println("therefore the lowest mark in the class is " + numbers[numbers.length]);
+                     //print the title for the outputed numbers and the highest mark
+        System.out.println("therefore the highest mark in the class is " + numbers[numMarks-1]);
         
            
                 }
             }
+

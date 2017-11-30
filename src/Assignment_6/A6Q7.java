@@ -17,11 +17,11 @@ public class A6Q7 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
- 
 
 
 
-        
+
+
 
         //an array to store the student marks
         int[] numbers = new int[1000];
@@ -31,41 +31,47 @@ public class A6Q7 {
         for (int i = 0; i < 1000; i++) {
             numbers[i] = i + 2;
         }
-     
+
+        //go through
         for (int i = 0; i < 1000; i++) {
-            
+
+            //if we have not marked the number as 0
             if (numbers[i] > 0) {
-                
+
+                //multiplier is the number that is being looked at
                 int multiplier = numbers[i];
-                
-                for (int j = multiplier * 2 -2; j < 1000; j = j + multiplier) {
-    
+
+                //find the non prime numbers by multiplying the "multiplier" into larger numbers
+                for (int j = multiplier * 2 - 2; j < 1000; j = j + multiplier) {
+
+                    // mark all of the non prime identified numbers as 0
                     numbers[j] = 0;
                 }
             }
         }
-        
-        
-        
-        
-      
-        
-        //print the title for the outputed numbers
+
+
+
+
+
+
+        //explanation for the following numbers
         System.out.println("the values of all of the prime numbers between 2 and 1000 are as follows:");
 
-        //go threw each spot on the array
+        //go through each spot on the array
         for (int x = 0; x < 1000; x++) {
 
-              if (numbers[x] > 0) {
-            
-                  
-            //print each number as it is adressed in the for statement
-            System.out.print(numbers[x] + ", ");
-                    
-        }         
-                    
-                 
-    }
-    
-                }
+            //if the number being looked as is not marked as a zero (or just greater than 0)
+            if (numbers[x] > 0) {
+
+
+                //print each number as they are in the array
+                System.out.print(numbers[x] + ", ");
+
             }
+
+
+        }
+
+    }
+}

@@ -50,7 +50,6 @@ public class A6Q3 {
         } else {
 
 
-
             //swap the places in the array of the integers using the placeholder variable
             placeHolder = numbers[0];
 

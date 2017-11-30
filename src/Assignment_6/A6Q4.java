@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @author skeeo8221
  */
 public class A6Q4 {
+    
 
     /**
      * @param args the command line arguments
