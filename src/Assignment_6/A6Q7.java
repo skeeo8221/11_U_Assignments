@@ -18,98 +18,54 @@ public class A6Q7 {
     public static void main(String[] args) {
         // TODO code application logic here
  
-        //new variable to hold the place of an integer when swaping places
-        int placeHolder = 0;
 
 
 
-        //print "how many marks will you be entering?"
-        System.out.print("how many marks will you be entering?");
-
-        //create scanner to use as input
-        Scanner input = new Scanner(System.in);
-
-        //new integer numStudents is next line
-        int numMarks = input.nextInt();
-
+        
 
         //an array to store the student marks
-        int[] numbers = new int[numMarks];
+        int[] numbers = new int[1000];
 
 
-        //print "enter the value of the" (the number of marks that they will be entering)"marks"
-        System.out.println("enter the values of the " + numMarks + " marks");
-
-        //use a loop to get all the info
-        for (int i = 0; i < numbers.length; i++) {
-
-
-            //the array input is the next line
-            numbers[i] = input.nextInt();
-
+        //use a loop to populate the array (2 to 1000)
+        for (int i = 0; i < 1000; i++) {
+            numbers[i] = i + 2;
         }
-
-        //use the following statements to sort the 10 marks into acsending order
-
-        // go through the array one spot at a time
-        for (int x = 0; x < numbers.length - 1; x++) {
-
-            //go through the array minus the last number, going through one less each time
-            for (int y = 0; y < numbers.length - x - 1; y++) {
-
-                //if the number being adressed is bigger than the number ahead of it
-                if (numbers[y] > numbers[y + 1]) {
-
-                    //swap the places in the array of the integers using the placeholder variable
-                    placeHolder = numbers[y];
-
-                    numbers[y] = numbers[y + 1];
-
-                    numbers[y + 1] = placeHolder;
-
-                    
-                    
+     
+        for (int i = 0; i < 1000; i++) {
+            
+            if (numbers[i] > 0) {
+                
+                int multiplier = numbers[i];
+                
+                for (int j = multiplier * 2 -2; j < 1000; j = j + multiplier) {
+    
+                    numbers[j] = 0;
                 }
             }
+        }
         
-        }  
+        
+        
+        
+      
         
         //print the title for the outputed numbers
-        System.out.println("the values you entered in ascending value are:");
+        System.out.println("the values of all of the prime numbers between 2 and 1000 are as follows:");
 
         //go threw each spot on the array
-        for (int x = 0; x < numbers.length; x++) {
+        for (int x = 0; x < 1000; x++) {
 
+              if (numbers[x] > 0) {
+            
+                  
             //print each number as it is adressed in the for statement
-            System.out.println(numbers[x]);
+            System.out.print(numbers[x] + ", ");
                     
         }         
                     
-                    
-        //calculate the average of the numbers               
-         int g = 0;
-        
-          for (int i = 0; i < numbers.length; i++) {
-            
-              g = g + numbers[i];
-              
-          }
-              double total = g / numbers.length;
-                    
-          
-                    
-                     //print the title for the outputed numbers
-        System.out.println("therefore the class average is " + total);
-                    
-                     
-                     //print the title for the outputed numbers
-        System.out.println("therefore the lowest mark in the class is " + numbers[0]);
-        
-                     
-                     //print the title for the outputed numbers
-        System.out.println("therefore the highest mark in the class is " + numbers[numMarks-1]);
-        
-           
+                 
+    }
+    
                 }
             }
-
