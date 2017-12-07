@@ -18,37 +18,29 @@ public class A7Q3 {
     //double void type means it does not need to send answer
     public void examGrade(double examMark) {
 
+       double noRemander;        
+       
+               //go through
+        for (int i = 0; i < examMark; i++) {
 
-        // sort the marks into the letter grades that they belong in
-        if (examMark < 50) {
-            //print the letter mark
-            System.out.println("letter grade from yor exam is F ");
-        }
-        if (examMark < 59 && examMark > 50) {
-            //print the letter mark
-            System.out.println("letter grade from yor exam is D ");
-        }
-        if (examMark < 69 && examMark > 60) {
-            //print the letter mark
-            System.out.println("letter grade from yor exam is C ");
-        }
-        if (examMark < 79 && examMark > 70) {
-            //print the letter mark
-            System.out.println("letter grade from yor exam is B ");
-        }
-        if (examMark > 80) {
-            //print the letter mark
-            System.out.println("letter grade from yor exam is A ");
-        }
+            
+            
+            if (int i % 2 ) {
+
     }
+        
 
+          System.out.println( noRemander );
+        }
+        
+        
     public static void main(String[] args) {
 
 
         A7Q3 test = new A7Q3();
 
         // ask for the percentage grade
-        System.out.println("please enter the value of the grade you got on your exam");
+        System.out.println("please enter a number to find all of the numbers that will divide the number equaly ");
 
         //new scanner for input
         Scanner in = new Scanner(System.in);
