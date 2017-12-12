@@ -39,7 +39,7 @@ public class A7Q6 {
         A7Q6 test = new A7Q6();
 
         // ask for a number to have its last digit identified
-        System.out.println("please enter the number of line disired ");
+        System.out.println("please enter the number that you want find the last digit of ");
 
         //new scanner for input
         Scanner in = new Scanner(System.in);
