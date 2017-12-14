@@ -21,12 +21,15 @@ public class A7Q8 {
         //turn negatives into positives
         if (number < 0) {
 
+            // multiply the number by -1 to turn negatives
             number = number * -1;
 
         }
 
+        //if the number                                                                                                           
         if (number == 0) {
 
+            //
             return false;
         }
 
