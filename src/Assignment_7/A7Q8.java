@@ -12,13 +12,12 @@ import java.util.Scanner;
  */
 public class A7Q8 {
 
- /**
+    /**
      * @param args the command line arguments
      */
     //double void type means it does not need to send answer
-    public void lastDigit(int number) {
+    public boolean allDigitsOdd(int number) {
 
-        
         //turn negatives into positives
         if (number < 0) {
 
@@ -26,39 +25,26 @@ public class A7Q8 {
 
         }
 
-        
-       
-        
-        //find the last digit of the entered number
-       
-  while ( number > 9) {
+        if (number == 0) {
 
-        if (number % 2 == 0) {
-        
-       
-             number = number % 10;
-            
-             
-              if (number <9) {
-             
-               //print out the first digit of the entered number
-        System.out.println("the number you entered contains atleast one even number ");   
+            return false;
         }
-        }else{
-            
-                //print out the first digit of the entered number
-        System.out.println("the number you entered contains only odd numbers ");
-         
-        break;
-        
+
+        //find the last digit of the entered number
+        while (number > 0) {
+
+            if (number % 2 == 0) {
+
+                return false;
+
+            }
+
+            number = number / 10;
+
         }
-            
-     
-        
-        
-        }
-       
-    
+
+        return true;
+
     }
 
     public static void main(String[] args) {
@@ -74,7 +60,15 @@ public class A7Q8 {
         //new integer called number witch holds the entered number and will turn into the last digit
         int number = in.nextInt();
 
-        test.lastDigit(number);
+        if (test.allDigitsOdd(number)) {
 
+            // ask for a number to have its first digit identified
+            System.out.println("all digits are odd ");
+
+        } else {
+
+            System.out.println("atleast one digit is even ");
+
+        }
     }
 }
