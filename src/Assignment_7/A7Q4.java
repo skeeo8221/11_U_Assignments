@@ -52,10 +52,5 @@ public class A7Q4 {
 
         //currentBalence uses the intrest, balence, numYears
         test.currentBalence(intrest, balence, numYears);
-
-
-
-
-
     }
 }

@@ -60,8 +60,5 @@ public class A7Q2 {
         test.examGrade(examMark);
 
 
-
-
-
     }
 }

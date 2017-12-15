@@ -11,32 +11,34 @@ import java.util.Scanner;
  * @author skeeo8221
  */
 public class A7Q7 {
-  /**
+
+    /**
      * @param args the command line arguments
      */
     //double void type means it does not need to send answer
     public void lastDigit(int number) {
 
-        
+
         //turn negatives into positives
         if (number < 0) {
 
             number = number * -1;
 
+
         }
 
-        
-           while ( number > 9) {
-        
-        //find the first digit of the entered number
-        number = number / 10;
 
-           }
-           
+        while (number > 9) {
+
+            //find the first digit of the entered number
+            number = number / 10;
+
+        }
+
         //print out the first digit of the entered number
         System.out.println("the first digit of the number you entered is " + number);
 
-    
+
     }
 
     public static void main(String[] args) {

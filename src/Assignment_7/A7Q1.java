@@ -23,12 +23,12 @@ public class A7Q1 {
 
         //send back the answer
         return answer;
-        
+
     }
 
     public static void main(String[] args) {
-        
-        
+
+
         A7Q1 test = new A7Q1();
 
         // ask for the radius of the circle
@@ -45,8 +45,5 @@ public class A7Q1 {
 
         //print the area of the circle
         System.out.println("the area of the circle is " + areaOfCircle);
-
-
-
     }
 }

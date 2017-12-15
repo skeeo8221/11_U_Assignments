@@ -39,6 +39,7 @@ public class A7Q5 {
             }
             if (randNum == 5) {
                 System.out.println("*****");
+
             }
         }
     }

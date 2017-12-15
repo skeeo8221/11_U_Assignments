@@ -24,6 +24,7 @@ public class A7Q6 {
 
             number = number * -1;
 
+        
         }
 
         //find the last digit of the entered number
