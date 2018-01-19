@@ -4,7 +4,6 @@ package Final;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JComponent;
@@ -108,11 +107,11 @@ public class Final_Assignment_Game extends JComponent {
         g.fillOval(player.x, player.y, player.width, player.height);
 
         g.fillRect(0, 0, 10, HEIGHT);
-        
+
         g.fillRect(WIDTH - 10, 0, 10, HEIGHT);
-        
-        g.fillRect(0 , 0, WIDTH, 10);
-        
+
+        g.fillRect(0, 0, WIDTH, 10);
+
         g.fillRect(0, HEIGHT - 10, WIDTH, 10);
 
 
@@ -142,10 +141,13 @@ public class Final_Assignment_Game extends JComponent {
             int randH = (int) (Math.random() * (54 - 1 + 1)) + 10;
 
             int randW = randH;
+            
+           
+            
 
             blocks[i] = new Rectangle(randX, randY, randW, randH);
 
-
+             
 
             if (i > 0) {
                 while (blocks[i].intersects(blocks[i - 1])) {
@@ -153,6 +155,37 @@ public class Final_Assignment_Game extends JComponent {
                     blocks[i].x = blocks[i].x - 10;
 
                     blocks[i].y = blocks[i].y - 10;
+
+
+                    while ((blocks[i].x + blocks[i].width) > WIDTH) {
+
+                        blocks[i].x = (int) (Math.random() * (WIDTH - 1 + 1)) + 10;
+
+
+                    }
+
+                    while (blocks[i].x < 0) {
+
+                        blocks[i].x = (int) (Math.random() * (WIDTH - 1 + 1)) + 10;
+
+                    }
+
+                    while ((blocks[i].y + blocks[i].height) > HEIGHT) {
+
+                        blocks[i].y = (int) (Math.random() * (HEIGHT - 1 + 1)) + 10;
+
+
+                    }
+
+                    while (blocks[i].y < 0) {
+
+                        blocks[i].y = (int) (Math.random() * (HEIGHT - 1 + 1)) + 10;
+
+
+                    }
+                    
+                   
+
 
                     i = i + 1;
                 }
@@ -219,6 +252,10 @@ public class Final_Assignment_Game extends JComponent {
 
                         player.height = player.width;
 
+                        if (player.width == 0) {
+
+                            System.out.println("you lose");
+                        }
                     }
                 }
             }
@@ -262,6 +299,34 @@ public class Final_Assignment_Game extends JComponent {
             player.x = player.x + playerDX;
             player.y = player.y + playerDY;
 
+
+            if ((player.x + player.width) > WIDTH) {
+
+                player.x = player.x - 2;
+
+
+            }
+
+            if (player.x < 0) {
+
+                player.x = player.x + 2;
+
+
+            }
+
+            if ((player.y + player.height) > HEIGHT) {
+
+                player.y = player.y - 2;
+
+
+            }
+
+            if (player.y < 0) {
+
+                player.y = player.y + 2;
+
+
+            }
 
 
 
