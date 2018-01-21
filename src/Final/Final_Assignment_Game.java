@@ -40,14 +40,16 @@ public class Final_Assignment_Game extends JComponent {
     int playerDX = 0;
     int playerDY = 0;
     int frameCount = 0;
-    int numObsticles = 0;
+    int numObstacles = 0;
     //blocks in the level
-    Rectangle[] blocks = new Rectangle[numObsticles];
+    Rectangle[] blocks = new Rectangle[numObstacles];
     boolean left = false;
     boolean right = false;
     boolean up = false;
     boolean down = false;
-
+    int deadObstacles = 0;
+    int ObstaclesLeft = numObstacles - deadObstacles;
+    
     // GAME VARIABLES END HERE   
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
@@ -83,22 +85,15 @@ public class Final_Assignment_Game extends JComponent {
     public void paintComponent(Graphics g) {
         // always clear the screen first!
 
-
         g.clearRect(0, 0, WIDTH, HEIGHT);
 
         // GAME DRAWING GOES HERE
-
-
-
         g.setColor(Color.BLACK);
 
-
-        //use a loop to generate random number and create obsticles
-        for (int i = 0; i < numObsticles; i++) {
-
+        //use a loop to generate random number and create Obstacles
+        for (int i = 0; i < numObstacles; i++) {
 
             g.fillOval(blocks[i].x, blocks[i].y, blocks[i].width, blocks[i].height);
-
 
         }
 
@@ -114,82 +109,73 @@ public class Final_Assignment_Game extends JComponent {
 
         g.fillRect(0, HEIGHT - 10, WIDTH, 10);
 
+        g.setColor(Color.RED);
+        
+        ObstaclesLeft = numObstacles - deadObstacles;
+        
+        if (ObstaclesLeft != 0){
+            
+        g.drawString(("Obstacles Left: " + ObstaclesLeft), 50, 25);
+        
+        }
+        
+        
+        
+         if ((numObstacles - deadObstacles) == 0 ){
+        
+            g.drawString("YOU WIN!!!", (WIDTH/2), (HEIGHT/2));
+         }
+           
+            
+        
+        
+        if (player.width == 0) {
 
-
-
+        g.drawString("YOU LOSE!!!", (WIDTH/2), (HEIGHT/2));
+        
+        
+           
+        }
+        
+      }
+     
+        
+        
         // GAME DRAWING ENDS HERE
-    }
+    
 
     // This method is used to do any pre-setup you might need to do
     // This is run before the game loop begins!
     public void preSetup() {
         // Any of your pre setup before the loop starts should go here
 
-
         int randNum = (int) (Math.random() * (20 - 1 + 1)) + 10;
 
-        numObsticles = randNum;
-
+        numObstacles = randNum;
+        
+        
         blocks = new Rectangle[randNum];
 
-
         for (int i = 0; i < randNum; i++) {
-            int randX = (int) (Math.random() * (WIDTH - 1 + 1)) + 10;
+            int randX = (int) (Math.random() * ((WIDTH - 54) - 1 + 1)) + 20;
 
-            int randY = (int) (Math.random() * (HEIGHT - 1 + 1)) + 10;
+            int randY = (int) (Math.random() * ((HEIGHT - 54) - 1 + 1)) + 20;
 
             int randH = (int) (Math.random() * (54 - 1 + 1)) + 10;
 
             int randW = randH;
-            
-           
-            
 
             blocks[i] = new Rectangle(randX, randY, randW, randH);
 
-             
+            for (int j = 0; j < i; j++) {
 
-            if (i > 0) {
-                while (blocks[i].intersects(blocks[i - 1])) {
+                while (blocks[i].intersects(blocks[j]) || blocks[i].intersects(player) ) {
 
-                    blocks[i].x = blocks[i].x - 10;
+                    blocks[i].x = (int) (Math.random() * ((WIDTH - 54) - 1 + 1)) + 20;
 
-                    blocks[i].y = blocks[i].y - 10;
+                    blocks[i].y = (int) (Math.random() * ((HEIGHT - 54) - 1 + 1)) + 20;
 
-
-                    while ((blocks[i].x + blocks[i].width) > WIDTH) {
-
-                        blocks[i].x = (int) (Math.random() * (WIDTH - 1 + 1)) + 10;
-
-
-                    }
-
-                    while (blocks[i].x < 0) {
-
-                        blocks[i].x = (int) (Math.random() * (WIDTH - 1 + 1)) + 10;
-
-                    }
-
-                    while ((blocks[i].y + blocks[i].height) > HEIGHT) {
-
-                        blocks[i].y = (int) (Math.random() * (HEIGHT - 1 + 1)) + 10;
-
-
-                    }
-
-                    while (blocks[i].y < 0) {
-
-                        blocks[i].y = (int) (Math.random() * (HEIGHT - 1 + 1)) + 10;
-
-
-                    }
-                    
-                   
-
-
-                    i = i + 1;
                 }
-
 
             }
         }
@@ -216,13 +202,7 @@ public class Final_Assignment_Game extends JComponent {
             // all your game rules and move is done in here
             // GAME LOGIC STARTS HERE 
 
-
-
-
-
-
-            for (int i = 0; i < numObsticles; i++) {
-
+            for (int i = 0; i < numObstacles; i++) {
 
                 if (player.width > blocks[i].width) {
 
@@ -236,11 +216,18 @@ public class Final_Assignment_Game extends JComponent {
 
                         player.height = player.width;
 
+                        if (blocks[i].width <= 0) {
 
+                            deadObstacles = deadObstacles + 1;
+                            
+                            
+                                
+                        
 
                     }
+                }
 
-                } else {
+            }else {
 
                     while (blocks[i].intersects(player)) {
 
@@ -252,198 +239,174 @@ public class Final_Assignment_Game extends JComponent {
 
                         player.height = player.width;
 
-                        if (player.width == 0) {
-
-                            System.out.println("you lose");
-                        }
+                        
+                        
                     }
                 }
-            }
+        }
 
+        if (right) {
 
-            if (right) {
+            playerDX = 2;
 
-                playerDX = 2;
+        } else if (left) {
 
-            } else if (left) {
+            playerDX = -2;
 
-                playerDX = -2;
+        } else {
 
-            } else {
-
-                playerDX = 0;
-
-
-
-            }
-
-            if (up) {
-
-                playerDY = -2;
-
-            } else if (down) {
-
-                playerDY = 2;
-
-            } else {
-
-                playerDY = 0;
-
-
-            }
-
-
-
-
-
-            player.x = player.x + playerDX;
-            player.y = player.y + playerDY;
-
-
-            if ((player.x + player.width) > WIDTH) {
-
-                player.x = player.x - 2;
-
-
-            }
-
-            if (player.x < 0) {
-
-                player.x = player.x + 2;
-
-
-            }
-
-            if ((player.y + player.height) > HEIGHT) {
-
-                player.y = player.y - 2;
-
-
-            }
-
-            if (player.y < 0) {
-
-                player.y = player.y + 2;
-
-
-            }
-
-
-
-
-
-
-            // GAME LOGIC ENDS HERE 
-            // update the drawing (calls paintComponent)
-            repaint();
-
-            // SLOWS DOWN THE GAME BASED ON THE FRAMERATE ABOVE
-            // USING SOME SIMPLE MATH
-            deltaTime = System.currentTimeMillis() - startTime;
-            try {
-                if (deltaTime > desiredTime) {
-                    //took too much time, don't wait
-                    Thread.sleep(1);
-                } else {
-                    // sleep to make up the extra time
-                    Thread.sleep(desiredTime - deltaTime);
-                }
-            } catch (Exception e) {
-            }
+            playerDX = 0;
 
         }
+
+        if (up) {
+
+            playerDY = -2;
+
+        } else if (down) {
+
+            playerDY = 2;
+
+        } else {
+
+            playerDY = 0;
+
+        }
+
+        player.x = player.x + playerDX;
+        player.y = player.y + playerDY;
+
+        if ((player.x + player.width) > WIDTH) {
+
+            player.x = player.x - 2;
+
+        }
+
+        if (player.x < 0) {
+
+            player.x = player.x + 2;
+
+        }
+
+        if ((player.y + player.height) > HEIGHT) {
+
+            player.y = player.y - 2;
+
+        }
+
+        if (player.y < 0) {
+
+            player.y = player.y + 2;
+
+        }
+
+        // GAME LOGIC ENDS HERE 
+        // update the drawing (calls paintComponent)
+        repaint();
+
+        // SLOWS DOWN THE GAME BASED ON THE FRAMERATE ABOVE
+        // USING SOME SIMPLE MATH
+        deltaTime = System.currentTimeMillis() - startTime;
+        try {
+            if (deltaTime > desiredTime) {
+                //took too much time, don't wait
+                Thread.sleep(1);
+            } else {
+                // sleep to make up the extra time
+                Thread.sleep(desiredTime - deltaTime);
+            }
+        } catch (Exception e) {
+        }
+
     }
+}
 
 // Used to implement any of the Mouse Actions
-    private class Mouse extends MouseAdapter {
-        // if a mouse button has been pressed down
+private class Mouse extends MouseAdapter {
+    // if a mouse button has been pressed down
 
-        @Override
-        public void mousePressed(MouseEvent e) {
-        }
-
-        // if a mouse button has been released
-        @Override
-        public void mouseReleased(MouseEvent e) {
-        }
-
-        // if the scroll wheel has been moved
-        @Override
-        public void mouseWheelMoved(MouseWheelEvent e) {
-        }
-
-        // if the mouse has moved positions
-        @Override
-        public void mouseMoved(MouseEvent e) {
-        }
+    @Override
+    public void mousePressed(MouseEvent e) {
     }
+
+    // if a mouse button has been released
+    @Override
+    public void mouseReleased(MouseEvent e) {
+    }
+
+    // if the scroll wheel has been moved
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+    }
+
+    // if the mouse has moved positions
+    @Override
+    public void mouseMoved(MouseEvent e) {
+    }
+}
 
 // Used to implements any of the Keyboard Actions
-    private class Keyboard extends KeyAdapter {
-        // if a key has been pressed down
+private class Keyboard extends KeyAdapter {
+    // if a key has been pressed down
 
-        @Override
-        public void keyPressed(KeyEvent e) {
+    @Override
+    public void keyPressed(KeyEvent e) {
 
-
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_LEFT) {
-                left = true;
-
-            }
-
-            if (key == KeyEvent.VK_RIGHT) {
-                right = true;
-
-            }
-
-            if (key == KeyEvent.VK_UP) {
-                up = true;
-
-            }
-
-            if (key == KeyEvent.VK_DOWN) {
-                down = true;
-
-            }
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_LEFT) {
+            left = true;
 
         }
 
-        // if a key has been released
-        @Override
-        public void keyReleased(KeyEvent e) {
-
-
-
-            int key = e.getKeyCode();
-            if (key == KeyEvent.VK_LEFT) {
-                left = false;
-
-            }
-
-            if (key == KeyEvent.VK_RIGHT) {
-                right = false;
-
-            }
-
-            if (key == KeyEvent.VK_UP) {
-                up = false;
-
-            }
-
-            if (key == KeyEvent.VK_DOWN) {
-                down = false;
-
-            }
-
+        if (key == KeyEvent.VK_RIGHT) {
+            right = true;
 
         }
+
+        if (key == KeyEvent.VK_UP) {
+            up = true;
+
+        }
+
+        if (key == KeyEvent.VK_DOWN) {
+            down = true;
+
+        }
+
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+    // if a key has been released
+    @Override
+    public void keyReleased(KeyEvent e) {
+
+        int key = e.getKeyCode();
+        if (key == KeyEvent.VK_LEFT) {
+            left = false;
+
+        }
+
+        if (key == KeyEvent.VK_RIGHT) {
+            right = false;
+
+        }
+
+        if (key == KeyEvent.VK_UP) {
+            up = false;
+
+        }
+
+        if (key == KeyEvent.VK_DOWN) {
+            down = false;
+
+        }
+
+    }
+}
+
+/**
+ * @param args the command line arguments
+ */
+public static void main(String[] args) {
         // creates an instance of my game
         Final_Assignment_Game game = new Final_Assignment_Game();
 
