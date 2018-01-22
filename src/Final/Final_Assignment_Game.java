@@ -51,7 +51,8 @@ public class Final_Assignment_Game extends JComponent {
     int deadObstacles = 0;
     int ObstaclesLeft = numObstacles - deadObstacles;
     Font standard = new Font("impcat", Font.BOLD, 42);
-
+    Color lightBlue = new Color(10,10,255);
+    
     // GAME VARIABLES END HERE   
     // Constructor to create the Frame and place the panel in
     // You will learn more about this in Grade 12 :)
@@ -103,12 +104,15 @@ public class Final_Assignment_Game extends JComponent {
 
         }
 
-        //set the drawing color to blue
-        g.setColor(Color.BLUE);
-
+        //set the drawing color to light blue
+        g.setColor(Color.ORANGE);
+        
         //create the player with its preditermined values
         g.fillOval(player.x, player.y, player.width, player.height);
 
+        // //set the drawing color to blue
+        g.setColor(Color.BLUE);
+         
         //make walls (for visual effect only)
         g.fillRect(0, 0, 10, HEIGHT);
         g.fillRect(WIDTH - 10, 0, 10, HEIGHT);
