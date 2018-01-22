@@ -51,7 +51,10 @@ public class Final_Assignment_Game extends JComponent {
     int deadObstacles = 0;
     int ObstaclesLeft = numObstacles - deadObstacles;
     Font standard = new Font("impcat", Font.BOLD, 42);
-    Color lightBlue = new Color(10,10,255);
+    Color lightBlue = new Color(100, 100, 255);
+    Color darkBlue = new Color(0, 0, 160);
+    Color darkDarkBlue = new Color(0, 0, 70);
+    Color darkRed = new Color(160, 0, 0);
     
     // GAME VARIABLES END HERE   
     // Constructor to create the Frame and place the panel in
@@ -94,7 +97,7 @@ public class Final_Assignment_Game extends JComponent {
         // GAME DRAWING GOES HERE
         
         //set the color to black
-        g.setColor(Color.BLACK);
+        g.setColor(darkDarkBlue);
 
         //go through each obstacle in the obstacle array 
         for (int i = 0; i < numObstacles; i++) {
@@ -105,13 +108,13 @@ public class Final_Assignment_Game extends JComponent {
         }
 
         //set the drawing color to light blue
-        g.setColor(Color.ORANGE);
+        g.setColor(lightBlue);
         
         //create the player with its preditermined values
         g.fillOval(player.x, player.y, player.width, player.height);
 
         // //set the drawing color to blue
-        g.setColor(Color.BLUE);
+        g.setColor(darkBlue);
          
         //make walls (for visual effect only)
         g.fillRect(0, 0, 10, HEIGHT);
@@ -120,7 +123,7 @@ public class Final_Assignment_Game extends JComponent {
         g.fillRect(0, HEIGHT - 10, WIDTH, 10);
         
         //set the color to red
-        g.setColor(Color.RED);
+        g.setColor(darkRed);
 
         //set the font to the standard font that was preditermined
         g.setFont(standard);
@@ -177,7 +180,7 @@ public class Final_Assignment_Game extends JComponent {
         for (int i = 0; i < randNum; i++) {
             int randX = (int) (Math.random() * ((WIDTH - 54) - 1 + 1)) + 20;
             int randY = (int) (Math.random() * ((HEIGHT - 54) - 1 + 1)) + 20;
-            int randH = (int) (Math.random() * (54 - 1 + 1)) + 10;
+            int randH = (int) (Math.random() * (70 - 1 + 1)) + 10;
             int randW = randH;
 
             //solidify the values of each obstacle
@@ -190,8 +193,8 @@ public class Final_Assignment_Game extends JComponent {
                 while (blocks[i].intersects(blocks[j]) || blocks[i].intersects(player)) {
 
                     //if intersections are present send obstacle in question to new random location
-                    blocks[i].x = (int) (Math.random() * ((WIDTH - 54) - 1 + 1)) + 20;
-                    blocks[i].y = (int) (Math.random() * ((HEIGHT - 54) - 1 + 1)) + 20;
+                    blocks[i].x = (int) (Math.random() * ((WIDTH - 70) - 1 + 1)) + 20;
+                    blocks[i].y = (int) (Math.random() * ((HEIGHT - 70) - 1 + 1)) + 20;
 
                 }
 
