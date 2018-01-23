@@ -33,27 +33,55 @@ public class Final_Assignment_Game extends JComponent {
     long desiredFPS = 60;
     long desiredTime = (500) / desiredFPS;
     // YOUR GAME VARIABLES WOULD GO HERE
+    
+    
+    //the values of the player
     int playerX = 100;
     int playerY = 100;
     int playerW = 35;
     int playerH = playerW;
+    
+    //the player
     Rectangle player = new Rectangle(playerX, playerY, playerW, playerH);
+    
+    //the movement of the player
     int playerDX = 0;
     int playerDY = 0;
+    
+    //the frame counter
     int frameCount = 0;
+    
+    //the randomly generated number of obsricles
     int numObstacles = 0;
+    
     //obstacles in the level
     Rectangle[] blocks = new Rectangle[numObstacles];
+    
+    //the setup for the controling of movement of the player
     boolean left = false;
     boolean right = false;
     boolean up = false;
     boolean down = false;
+    
+    //the number of obstacles eaten by the player
     int deadObstacles = 0;
+    
+    //the number of obstacles currently on the screen (not eaten by player)
     int ObstaclesLeft = numObstacles - deadObstacles;
+    
+    //just a standard font, used through out the game
     Font standard = new Font("impcat", Font.BOLD, 42);
+    
+    //custom color for player
     Color lightBlue = new Color(100, 100, 255);
+    
+    //custom color for boarders
     Color darkBlue = new Color(0, 0, 160);
+    
+    //custom color for obstacles
     Color darkDarkBlue = new Color(0, 0, 70);
+    
+    //custom color for text
     Color darkRed = new Color(160, 0, 0);
     
     // GAME VARIABLES END HERE   
